@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+
+:root {
+    --primary: #ff3b3b;
+    --primary-glow: rgba(255, 59, 59, 0.4);
+    --secondary: #ff7676;
+    --bg-dark: #050505;
+    --bg-card: rgba(25, 25, 25, 0.8);
+    --text-main: #ffffff;
+    --text-muted: #a0a0a0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.8;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glowPulse {
+    0% { box-shadow: 0 0 15px var(--primary-glow); }
+    50% { box-shadow: 0 0 30px var(--primary-glow); }
+    100% { box-shadow: 0 0 15px var(--primary-glow); }
+}
+
+.animate-fade {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Contenedor Principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header & Navegación */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 45px;
+    width: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+.logo-text {
+    font-size: 28px;
+    font-weight: 900;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1.5px;
+}
+
+nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after, nav a.active::after {
+    width: 100%;
+}
+
+nav a:hover, nav a.active {
+    color: var(--text-main);
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    margin-bottom: 25px;
+    line-height: 1.1;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+}
+
+/* Botones Profesionales */
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary), #cc0000);
+    color: white;
+    padding: 18px 45px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(255, 59, 59, 0.3);
+    animation: glowPulse 3s infinite;
+}
+
+.btn:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 25px rgba(255, 59, 59, 0.5);
+}
+
+.btn-outline {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid var(--primary);
+    box-shadow: none;
+    animation: none;
+    margin-left: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    transform: translateY(-5px);
+}
+
+/* Sección de Características */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 80px 0;
+}
+
+.feature-card {
+    background: var(--bg-card);
+    padding: 40px 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.05);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+/* Textos Legales (Documentos) */
+.legal-container {
+    background: var(--bg-card);
+    padding: 60px;
+    border-radius: 20px;
+    margin: 60px 0;
+    border: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.legal-container h1 {
+    font-size: 2.5rem;
+    color: var(--text-main);
+    margin-bottom: 10px;
+}
+
+.legal-container .update-date {
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 40px;
+    display: inline-block;
+    border-bottom: 1px solid var(--primary);
+    padding-bottom: 5px;
+}
+
+.legal-container h2 {
+    color: var(--secondary);
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    border-left: 4px solid var(--primary);
+    padding-left: 15px;
+}
+
+.legal-container h3 {
+    color: var(--text-main);
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.legal-container p, .legal-container li {
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+.legal-container ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-muted);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    margin-top: 80px;
+    background: #020202;
+}
+
+/* Responsive Extremo */
+@media (max-width: 900px) {
+    .hero h1 { font-size: 3.5rem; }
+    .legal-container { padding: 40px 30px; }
+}
+
+@media (max-width: 768px) {
+    header { flex-direction: column; text-align: center; justify-content: center; padding-top: 30px;}
+    nav { margin-top: 20px; display: flex; flex-direction: column; gap: 15px; width: 100%;}
+    nav a { margin: 0; padding: 10px; background: rgba(255,255,255,0.05); border-radius: 8px;}
+    .hero h1 { font-size: 2.8rem; }
+    .hero p { font-size: 1.1rem; }
+    .btn { display: block; margin: 0 auto 20px auto; width: 100%; max-width: 300px; }
+    .btn-outline { margin-left: auto; }
+    .legal-container { padding: 30px 20px; margin: 30px 0;}
+    .legal-container h1 { font-size: 2rem; }
+}
