@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Frutinovelas - Tu Dosis Diaria de Drama</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -13,6 +13,13 @@
                 <img src="logo.png" alt="Logo Frutinovelas" class="logo-img">
                 <span class="logo-text">FRUTINOVELAS</span>
             </a>
+            
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
             <nav>
                 <a href="index.html" class="active">Inicio</a>
                 <a href="descarga.html">Descargar</a>
@@ -32,21 +39,38 @@
                 </div>
             </section>
 
+            <h2 class="section-title animate-fade" style="animation-delay: 0.3s;">¿Por qué elegirnos?</h2>
             <section class="features animate-fade" style="animation-delay: 0.4s;">
                 <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3 style="color: white; margin-bottom: 10px;">Formato TikTok</h3>
-                    <p>Diseñado exclusivamente para visualización vertical. Desliza hacia arriba para pasar al siguiente episodio sin interrupciones.</p>
+                    <div style="font-size: 3rem; margin-bottom: 20px;">📱</div>
+                    <h3 style="color: white; margin-bottom: 10px;">Formato Vertical</h3>
+                    <p>Diseñado exclusivamente para visualización móvil. Desliza hacia arriba para pasar al siguiente episodio sin pausas ni interrupciones molestas.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🎁</div>
-                    <h3 style="color: white; margin-bottom: 10px;">Gana Recompensas</h3>
-                    <p>¿No quieres pagar? No hay problema. Mira anuncios patrocinados y gana Monedas gratis para desbloquear tus capítulos favoritos.</p>
+                    <div style="font-size: 3rem; margin-bottom: 20px;">🎁</div>
+                    <h3 style="color: white; margin-bottom: 10px;">Gratis con Anuncios</h3>
+                    <p>¿No quieres pagar? No hay problema. Mira anuncios patrocinados cortos y gana Monedas gratis al instante para desbloquear tus capítulos.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">👑</div>
+                    <div style="font-size: 3rem; margin-bottom: 20px;">👑</div>
                     <h3 style="color: white; margin-bottom: 10px;">Suscripción VIP</h3>
-                    <p>Obtén acceso total, elimina todos los anuncios y disfruta de los estrenos antes que nadie con nuestros planes semanales y mensuales.</p>
+                    <p>Obtén acceso total. Elimina todos los anuncios, disfruta de estrenos antes que nadie y visualiza el catálogo sin límites con nuestros planes.</p>
+                </div>
+            </section>
+
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <section class="faq-container">
+                <div class="faq-item">
+                    <h4>¿Frutinovelas es completamente gratis?</h4>
+                    <p>La descarga de la aplicación es 100% gratuita. Puedes disfrutar de todo nuestro contenido sin pagar dinero real simplemente utilizando nuestro sistema de recompensas, donde ganas Monedas virtuales por ver anuncios.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Cuándo estará disponible en iPhone (Apple)?</h4>
+                    <p>¡Estamos muy pronto a lanzarla! Actualmente estamos perfeccionando la experiencia en iOS y pasando las rigurosas revisiones de la App Store. Mantente atento a nuestras redes.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Cómo funcionan las Suscripciones VIP?</h4>
+                    <p>Si adquieres un plan VIP (semanal o mensual), tu cuenta se actualizará instantáneamente. Podrás ver todos los episodios sin gastar monedas y no se te mostrará publicidad. Puedes cancelar la renovación automática cuando quieras desde tu cuenta de Google Play.</p>
                 </div>
             </section>
         </main>
@@ -56,5 +80,15 @@
             <p style="margin-top: 10px; font-size: 0.9em;">Contacto comercial y soporte: soporte@frutinovelas.online</p>
         </footer>
     </div>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('nav');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
